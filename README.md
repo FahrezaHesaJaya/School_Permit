@@ -55,5 +55,3 @@ The **School Permit System** is a robust, efficient, and user-friendly web appli
 Take control of school leave management today with **School Permit System**—because education deserves efficiency. 🚀
 
 ---
-
-Cocok untuk menciptakan kesan profesional pada repository Anda! Jika ada hal yang ingin ditambahkan atau diperbaiki, beri tahu saya. 😊
