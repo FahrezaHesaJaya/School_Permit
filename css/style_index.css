@@ -1,61 +1,91 @@
-
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
+/* Container Styles */
 .container {
-    background-color: #fff; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    max-width: 500px;
+    margin: auto;
     padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0; /* Initial state for fade-in animation */
+    transform: translateY(20px); /* Start slightly below */
 }
 
+/* Header Styles */
 .header {
-    background-color: #1e90ff; 
+    background-color: #1e90ff;
     padding: 20px;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
 
 .header h2 {
-    color: #fff; 
-    margin: 0; 
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
 }
 
+/* Content Styles */
 .content {
     padding: 20px;
+    margin-top: 20px;
 }
 
-p {
+.content p {
+    font-size: 16px;
     color: #666;
-    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Tata letak tombol Register dan Login */
+.buttons {
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: space-between; /* Memisahkan tombol */
+    gap: 20px; /* Memberikan jarak antar tombol */
+    margin-top: 20px;
 }
 
-ul li {
-    display: inline-block;
-    margin: 10px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #1e90ff; 
+/* Gaya tombol */
+.buttons .button {
+    text-decoration: none; /* Menghilangkan garis bawah pada teks */
+    color: #fff; /* Warna teks putih */
+    background-color: #1e90ff; /* Warna biru */
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Efek hover */
+    text-align: center;
+    flex: 1; /* Tombol memiliki ukuran yang sama */
 }
 
-ul li a:hover {
-    background-color: #007bff;
+/* Hover pada tombol */
+.buttons .button:hover {
+    background-color: #007bff; /* Biru lebih gelap */
+}
+
+/* Fade-in Animation */
+.fade-in {
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

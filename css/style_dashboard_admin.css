@@ -1,119 +1,190 @@
-/* style_dashboard_admin.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
     padding: 20px;
+}
+
+/* Main Dashboard Container */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
     background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    gap: 30px;
+    justify-content: center; /* Centering the content */
+    flex-wrap: wrap; /* Allowing content to wrap on smaller screens */
+}
+
+/* Left Section: Permission Info */
+.left-section {
+    flex: 1;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between sections */
 }
 
-
-h2 {
-    background-color: #1e90ff; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    margin-top: 0; 
+.left-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
+.left-section h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 15px;
+}
 
 .permission-list {
     list-style-type: none;
     padding: 0;
 }
 
-
 .permission-list li {
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 .permission-info {
-    margin-bottom: 10px;
+    flex: 3;
+    color: #555;
 }
-
 
 .info-label {
     font-weight: bold;
-    margin-bottom: 5px;
+    color: #333;
 }
-
 
 .info-value {
-    margin-left: 10px;
-    margin-bottom: 10px;
+    color: #666;
 }
 
-
-form {
-    display: inline-block;
-}
-
-
-button[type="submit"] {
-    color: #fff;
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-    opacity: 0.8;
-}
-
-
-button[name="action"][value="approve"] {
+.approve-btn {
     background-color: #4caf50;
+    color: white;
 }
 
-button[name="action"][value="approve"]:hover {
-    background-color: #388e3c;
+.reject-btn {
+    background-color: #f44336;
+    color: white;
 }
 
-button[name="action"][value="reject"] {
-    background-color: #ff0000;
+.delete-btn {
+    background-color: #ff9800;
+    color: white;
 }
 
-button[name="action"][value="reject"]:hover {
-    background-color: #cc0000;
-}
-
-button[name="action"][value="delete"] {
-    background-color: #ffd700;
-    color: #000;
-}
-
-button[name="action"][value="delete"]:hover {
-    background-color: #e6c200;
-}
-
-
-button.logout {
-    background-color: #1e90ff;
-}
-
-button.logout:hover {
+button:hover {
     background-color: #007bff;
 }
 
+/* Right Section: Student Data */
+.right-section {
+    flex: 1;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-.message {
-    color: green;
-    font-weight: bold;
+.right-section h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th, .student-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.student-table th {
+    background-color: #f4f7f6;
+    color: #333;
+    font-weight: 600;
+}
+
+.student-table td {
+    color: #666;
+}
+
+/* Logout Button */
+.logout {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+}
+
+.logout:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .student-table th, .student-table td {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
